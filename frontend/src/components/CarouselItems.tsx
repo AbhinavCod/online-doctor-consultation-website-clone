@@ -1,43 +1,33 @@
-import { useState } from 'react'
-import { Carousel, CarouselItem } from 'react-bootstrap';
+
 import CarouselItemCard from './CarouselItemCard';
 
 const CarouselItems = () => {
-    const [index, setIndex] = useState(0);
 
-  const handleSelect = (selectedIndex:any) => {
-    setIndex(selectedIndex);
-  };
+ 
   return (
-    <div>
-        <Carousel activeIndex={index} onSelect={handleSelect} data-bs-theme="dark">
-            <CarouselItem className='flex'>
+    <div className='h-ful'>
                 <div className='flex  items-center'>
                     <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
                      problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-
-                </div>
-            </CarouselItem>
-            <CarouselItem>
+                    <CarouselItemCard url='https://practo.com/consult/static/images/period-problems-v1.jpg'
+                     problem='Periods problems?' price='₹ 599/-'/>
+                    <CarouselItemCard url='https://practo.com/consult/static/images/performance-issues-bed-v1.jpg'
+                     problem='Performance issues in beds?' price='₹ 699/-'/>
+                    <CarouselItemCard url='https://www.practo.com/consult/static/images/skin-problems-v1.jpg'
+                     problem='Skin Problems?' price='₹ 599/-'/>
+                
+            </div>
             <div className='flex  items-center'>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
-                    <CarouselItemCard url='https://www.practo.com/consult/static/images/depression-anxiety-v1.jpg'
-                     problem='Depression and Anxiety?' price='₹ 599/-'/>
+                    <CarouselItemCard url='https://www.practo.com/consult/static/images/lose-weight-v1.jpg'
+                     problem='Want to loose weight?' price='₹ 459/-'/>
+                    <CarouselItemCard url='https://www.practo.com/consult/static/images/stomach-issues-v1.jpg'
+                     problem='Stomach Issues?' price='₹ 499/-'/>
+                    <CarouselItemCard url='https://www.practo.com/consult/static/images/vaginal-infections-v1.jpg'
+                     problem='Vaginal Infections?' price='₹ 599/-'/>
+                    <CarouselItemCard url='https://www.practo.com/consult/static/images/sick-kid-v1.jpg'
+                     problem='Sick Kid?' price='₹ 599/-'/>
 
                 </div>
-            </CarouselItem>
-        </Carousel>
     </div>
   )
 }

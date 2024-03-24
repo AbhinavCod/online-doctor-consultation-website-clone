@@ -8,6 +8,8 @@ import FindDoctor from './pages/FindDoctor';
 import ConfirmPaymentPage from './pages/ConfirmPaymentPage';
 import AppointmentsPage from './pages/AppointmentsPage';
 import VideoCallPage from './pages/VideoCallPage';
+import ConsultDoctor from './pages/ConsultDoctor';
+import AddDoctorPage from './pages/AddDoctorPage';
 
 function App() {
 
@@ -43,6 +45,16 @@ function App() {
         <Route path='/videoCall' element={
           <Layout>
             <VideoCallPage />
+          </Layout>
+        } />
+        <Route path='/consultNow' element={
+          <Layout>
+            <ConsultDoctor />
+          </Layout>
+        } />
+        <Route path='/addDoctor' element={
+          <Layout>
+            <AddDoctorPage />
           </Layout>
         } />
       </Routes>

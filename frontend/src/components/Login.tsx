@@ -2,6 +2,7 @@ import { useForm } from 'react-hook-form';
 import { useMutation } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import * as apiClient from "../api-clients";
+import { useAppContext } from '../context/AppContext';
 
 export type LoginFormData = {
     email:string;
@@ -10,8 +11,14 @@ export type LoginFormData = {
 
 const Login = () => {
     const navigate = useNavigate();
+    const {isDoctor,setDoctorStatus} = useAppContext();
     const mutation = useMutation(apiClient.login,{
-        onSuccess:()=>{
+        onSuccess:(data)=>{
+            console.log(data);
+            if(data.doctor === true){
+                setDoctorStatus();
+            }
+            console.log(isDoctor);
             console.log("Login Successfull");
             navigate("/");
         },

@@ -1,8 +1,11 @@
 import { useState } from "react";
 import RegisterationForm from "./RegisterationForm";
+import { useAppContext } from "../context/AppContext";
 
 const Register = () => {
     const [doctor,setDoctor] = useState(true);
+    const {setDoctorStatus} = useAppContext();
+    setDoctorStatus(doctor);
     
   return (
     <div className='flex flex-col border-2 border-gray-400 shadow-xl rounded z-10 my-4 bg-slate-100' style={{width:"32rem",height:"30rem"}}>

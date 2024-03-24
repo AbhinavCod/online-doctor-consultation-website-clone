@@ -1,11 +1,14 @@
 import { useMutation } from "react-query";
 import * as apiClient from "../api-clients";
 import { useNavigate } from "react-router-dom";
+// import { useAppContext } from "../context/AppContext";
 
 const SignOutButton = ()=>{
     const navigate = useNavigate();
+    // const {setDoctorStatus} = useAppContext();
     const mutation = useMutation(apiClient.logout,{
         onSuccess:()=>{
+            // setDoctorStatus(false);
             console.log("Logout Successfully");
             navigate("/");
         },

@@ -2,6 +2,7 @@ import { ConfirmPaymentData } from "./components/ConfirmPaymentForm";
 import { LoginFormData } from "./components/Login";
 import { OfflineBookingFormData } from "./components/OfflineBookingForm";
 import { SignUpData } from "./components/RegisterationForm";
+import { AddDoctorData } from "./pages/AddDoctorPage";
 
 export const login = async(formData:LoginFormData)=>{
     const response = await fetch("/api/auth/login",{
@@ -157,4 +158,43 @@ export const getAppointmentsArray = async(email:string)=>{
     const data = await response.json();
     console.log(data);
     return data;
+}
+
+export const getDoctor = async()=>{
+    const url = "https://countries-cities.p.rapidapi.com/location/country/IND/city/list?page=2&per_page=20&population=1501";
+   const options = {
+    method:"GET",
+    headers: {
+		'X-RapidAPI-Key': import.meta.env.SEARCH_CITY_API_KEY as string,
+		'X-RapidAPI-Host': 'countries-cities.p.rapidapi.com'
+	}
+   }
+
+   try {
+	const response = await fetch(url, options);
+	const result = await response.text();
+	console.log(result);
+    return result
+} catch (error) {
+	console.error(error);
+}
+
+};
+
+export const addDoctor = async(formData:AddDoctorData)=>{
+    const response = await fetch("/api/doctor/add-doctor",{
+        method:"POST",
+        headers:{
+            "Content-Type":"application/json"
+        },
+        credentials:"include",
+        body:JSON.stringify(formData),
+    });
+
+
+    if(!response.ok){
+        throw new Error("Error registering doctor");
+    };
+
+    return await response.json();
 }

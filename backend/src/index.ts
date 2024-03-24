@@ -8,6 +8,7 @@ import authRoutes from "./routes/auth";
 import bookingRoutes from "./routes/booking";
 import paymentRoutes from "./routes/stripe";
 import appointmentsRoutes from "./routes/getAppointments";
+import doctorRoutes from "./routes/doctor";
 import path from "path";
 
 mongoose.connect(process.env.MONGODB_CONN_STRING as string).then(()=>{
@@ -31,6 +32,7 @@ app.use("/api/auth",authRoutes);
 app.use("/api/booking",bookingRoutes);
 app.use("/api/stripe",paymentRoutes);
 app.use("/api/getAppointments",appointmentsRoutes);
+app.use("/api/doctor",doctorRoutes);
 
 app.get("/",(req:Request,res:Response)=>{
     res.json({message:"I am live"});

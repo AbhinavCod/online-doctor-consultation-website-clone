@@ -8,7 +8,7 @@ type Props = {
 
 const CarouselItemCard = ({url,problem,price}:Props) => {
   return (
-    <div className="max-w-sm h-96 w-68 py-5  mx-12 overflow-hidden border-2 my-12 rounded-2xl">
+    <div className="max-w-sm h-76 w-68 shadow-xl mx-12 overflow-hidden border-2 my-12 rounded-2xl">
         <Link to={"/"}><img src={url} alt="Image"></img></Link>
         
         <div className="py-2 flex flex-col">

@@ -40,3 +40,18 @@
 .read-the-docs {
   color: #888;
 }
+
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+  width: 5px; /* Set the width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color of the track */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the thumb */
+  border-radius: 5px; /* Roundness of the thumb */
+}

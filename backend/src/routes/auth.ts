@@ -40,7 +40,7 @@ router.post("/login",[
             maxAge:86400000,
         });
 
-        return res.status(200).json({userId:user._id});
+        return res.status(200).json({userId:user._id,doctor:user.doctor});
     } catch (error) {
         console.log(error) ;  
         return res.status(400).json({message:"Something went wrong 😒"}); 
