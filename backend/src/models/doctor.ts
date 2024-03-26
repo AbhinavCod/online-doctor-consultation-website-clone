@@ -13,6 +13,8 @@ export type DoctorInformation = {
     clinicName:string,
     clinicAddress:string,
     homeAddress:string,
+    city:string,
+    imageUrls:string[]
 }
 
 const Schema = new mongoose.Schema<DoctorInformation>({
@@ -28,6 +30,8 @@ const Schema = new mongoose.Schema<DoctorInformation>({
     clinicName:{type:String,required:true},
     clinicAddress:{type:String,required:true},
     homeAddress:{type:String,required:true},
+    imageUrls:[{type:String,required:true}],
+    city:{type:String,required:true},
 });
 
 const Doctor = mongoose.model<DoctorInformation>("DoctorInfo",Schema);

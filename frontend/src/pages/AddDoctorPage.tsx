@@ -16,24 +16,51 @@ export type AddDoctorData = {
     clinicName:string,
     clinicAddress:string,
     homeAddress:string,
+    imageFiles:FileList,
+    city:string,
 }
 
 const AddDoctorPage = () => {
+    const [isLoading,setIsLoading] =  useState(false);
     const mutation = useMutation(apiClient.addDoctor,{
         onSuccess:()=>{
+            setIsLoading(false);
             console.log("Doctor registered");
         },
         onError:()=>{
+            setIsLoading(false);
             console.log("Doctor registeration failed");
         }
     })
     const {register,handleSubmit,formState:{errors}} = useForm<AddDoctorData>();
     const [gender,setGender] = useState("");
-    const onSubmit = handleSubmit((data)=>{
-        data = {...data,gender}
-        console.log(data);
-        mutation.mutate(data);
+    const onSubmit = handleSubmit((data:AddDoctorData)=>{
+        setIsLoading(true);
+        const formdata = new FormData();
+        formdata.append("fullName",data.fullName);
+        formdata.append("age",data.age.toString());
+        formdata.append("phoneNumber",data.phoneNumber);
+        formdata.append("email",data.email);
+        formdata.append("degree",data.degree);
+        formdata.append("experience",data.experience.toString());
+        formdata.append("speciality",data.speciality);
+        formdata.append("clinicAddress",data.clinicAddress);
+        formdata.append("clinicName",data.clinicName);
+        formdata.append("type",data.type);
+        formdata.append("homeAddress",data.homeAddress);
+        formdata.append("city",data.city);
+        formdata.append("gender",gender);
+        console.log(formdata);
+        Array.from(data.imageFiles).forEach((imageFile) => {
+            formdata.append(`imageFiles`, imageFile);
+          });
+          data = {...data,gender};
+          
+        mutation.mutate(formdata);
     })
+
+
+  
   return (
 
 
@@ -73,7 +100,7 @@ const AddDoctorPage = () => {
         <div className="grid md:grid-cols-[2fr_2fr] gap-6">
             <div className="flex flex-col gap-2 items-start px-4">
                     <label className="text-xl font-semibold tracking-tight">Current Age</label>
-                    <input type="number" placeholder="Age in number" className=" w-full outline-none py-1 px-2 text-xl border-gray-500 border-1 rounded-sm" {...register("age",{
+                    <input type="number" placeholder="Age in number" min={18} max={100} className=" w-full outline-none py-1 px-2 text-xl border-gray-500 border-1 rounded-sm" {...register("age",{
                         required:"Please enter age between 18 and 70",
                         min:18,
                         max:70
@@ -202,9 +229,48 @@ const AddDoctorPage = () => {
             </div>
         </div>
 
-        <div className="flex">
-            <button className="bg-blue-500 py-2 px-3 rounded-sm ml-6 text-white text-xl hover:bg-blue-600 hover:shadow-md">Add Me</button>
+        
+
+        <div className="grid md:grid-cols-[2fr_2fr] gap-6">
+        <div className="flex flex-col ml-6 items-start gap-2">
+            <label className="text-xl font-semibold tracking-tight">Profile Image :</label>
+            <input type="file" accept="image/*" {...register("imageFiles",{
+                validate:(imageFiles)=>{
+                    const totalLength = imageFiles.length;
+                    if(totalLength === 0){
+                        return "Atleast one image must be added";
+                    }
+                    else if(totalLength > 1){
+                        return "Profile Image cannnot be more than 1";
+                    }
+
+                    return true;
+                }
+            })}></input>{errors.imageFiles && (
+                <span className="text-red-500">{errors.imageFiles.message}</span>
+            )}
         </div>
+            <div className="flex flex-col gap-2 items-start px-4">
+                    <label className="text-xl font-semibold tracking-tight">City :</label>
+                    <input type="text" placeholder="City Name..."  className="w-full outline-none py-1 px-2 text-xl border-gray-500 border-1 rounded-sm" {...register("city",{
+                        required:"City Name is required"
+                    })}></input>{errors.city && (
+                        <span className="text-red-500">{errors.city.message}</span>
+                    )}
+            </div>
+        </div>
+
+        {isLoading ? (
+            <div className="flex my-6">
+            <button type="submit"  className="bg-blue-500 py-2 px-3 rounded-sm ml-6 text-white text-xl hover:bg-blue-600 hover:shadow-md">Adding...</button>
+        </div>
+
+        ) : (
+
+        <div className="flex my-6">
+            <button type="submit"  className="bg-blue-500 py-2 px-3 rounded-sm ml-6 text-white text-xl hover:bg-blue-600 hover:shadow-md">Add Me</button>
+        </div>
+        )}
 
         </form>
         

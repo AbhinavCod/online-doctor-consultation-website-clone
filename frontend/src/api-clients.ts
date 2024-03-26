@@ -181,14 +181,15 @@ export const getDoctor = async()=>{
 
 };
 
-export const addDoctor = async(formData:AddDoctorData)=>{
+export const addDoctor = async(formData:FormData)=>{
+    console.log(formData);
     const response = await fetch("/api/doctor/add-doctor",{
         method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
+        // headers:{
+            // "Content-Type":"application/json"
+        // },
         credentials:"include",
-        body:JSON.stringify(formData),
+        body:formData,
     });
 
 

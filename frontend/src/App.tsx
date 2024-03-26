@@ -10,6 +10,7 @@ import AppointmentsPage from './pages/AppointmentsPage';
 import VideoCallPage from './pages/VideoCallPage';
 import ConsultDoctor from './pages/ConsultDoctor';
 import AddDoctorPage from './pages/AddDoctorPage';
+import FindDoctorPage from './pages/FindDoctorPage';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
             <LoginSignUpPage />
           </Layout>
         } />
-        <Route path='/findDoctor' element={
+        <Route path='/bookAppointment' element={
           <Layout>
             <FindDoctor />
           </Layout>
@@ -55,6 +56,11 @@ function App() {
         <Route path='/addDoctor' element={
           <Layout>
             <AddDoctorPage />
+          </Layout>
+        } />
+        <Route path='/findDoctor' element={
+          <Layout>
+            <FindDoctorPage />
           </Layout>
         } />
       </Routes>

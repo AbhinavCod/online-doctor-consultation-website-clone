@@ -10,6 +10,13 @@ import paymentRoutes from "./routes/stripe";
 import appointmentsRoutes from "./routes/getAppointments";
 import doctorRoutes from "./routes/doctor";
 import path from "path";
+import {v2 as cloudinary} from "cloudinary";
+
+cloudinary.config({
+    cloud_name:process.env.CLOUDINARY_CLOUD_NAME,
+    api_key:process.env.CLOUDINARY_API_KEY,
+    api_secret:process.env.CLOUDINARY_API_SECRET
+})
 
 mongoose.connect(process.env.MONGODB_CONN_STRING as string).then(()=>{
     console.log("COnnection Successfull");

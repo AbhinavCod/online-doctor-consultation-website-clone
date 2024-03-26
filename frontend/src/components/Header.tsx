@@ -85,7 +85,7 @@ console.log(isDoctor);
         </div>
 
         <div className="hidden sm:flex gap-10">
-          <Link to={"/findDoctor"} className="text-xl hover:text-gray-600">
+          <Link to={"/bookAppointment"} className="text-xl hover:text-gray-600">
             Book Appointments
           </Link>
           <Link to={"/videoCall"} className="text-xl hover:text-gray-600">
@@ -100,8 +100,8 @@ console.log(isDoctor);
           <Link to={"/"} className="text-xl hover:text-gray-600">
             Surgeries
           </Link>
-          <Link to={"/"} className="text-xl hover:text-gray-600">
-            For Corporates
+          <Link to={"/findDoctor"} className="text-xl hover:text-gray-600">
+            Find Doctor
           </Link>
             <Link to={"/addDoctor"} className="text-xl hover:text-gray-600">
             Add new Doctor
