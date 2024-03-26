@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 
 const VideoConsultBookingForm = () => {
     const [problem,setProblem] = useState("");
-    const [type,setType] = useState("");
     const doctorsTypes = ["Allergists","Anesthesiologists","Dermatologists","Infectious disease doctors","Ophthalmologists","Obstetrician/gynecologists","Cardiologists",
                         "Endocrinologists","Gastroenterologists","Nephrologists","Urologists","Pulmonologists","Otolaryngologists","Neurologists","Psychiatrists",
                         "Oncologists","Radiologists","Rheumatologists","General surgeons","Orthopedic surgeons","Cardiac surgeons"];

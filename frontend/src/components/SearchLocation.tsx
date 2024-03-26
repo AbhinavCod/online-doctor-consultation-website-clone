@@ -2,8 +2,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
-import { useMutation } from "react-query";
-import * as apiClient from "../api-clients";
 
 const SearchLocation = ()=>{
     const [location,setLocation] = useState("Delhi");

@@ -2,7 +2,7 @@ import { ConfirmPaymentData } from "./components/ConfirmPaymentForm";
 import { LoginFormData } from "./components/Login";
 import { OfflineBookingFormData } from "./components/OfflineBookingForm";
 import { SignUpData } from "./components/RegisterationForm";
-import { AddDoctorData } from "./pages/AddDoctorPage";
+
 
 export const login = async(formData:LoginFormData)=>{
     const response = await fetch("/api/auth/login",{
