@@ -91,7 +91,7 @@ console.log(isDoctor);
           <Link to={"/videoCall"} className="text-xl hover:text-gray-600">
             Video Consult
           </Link>
-          <Link to={"/"} className="text-xl hover:text-gray-600">
+          <Link to={"/medicines"} className="text-xl hover:text-gray-600">
             Medicines
           </Link>
           <Link to={"/"} className="text-xl hover:text-gray-600">

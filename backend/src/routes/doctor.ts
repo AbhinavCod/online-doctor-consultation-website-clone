@@ -36,7 +36,6 @@ router.post("/add-doctor",verifyToken,[
     }
 
     try {
-        console.log(req.body);
         let doctor = await Doctor.findOne({email:req.body.email});
         if(doctor){
             return res.status(404).json({message:"Doctor already exists"});
@@ -46,18 +45,6 @@ router.post("/add-doctor",verifyToken,[
         const newDoctor:DoctorInformation = req.body;
 
         const imageUrls = await uploadImages(imageFiles);
-
-
-        // const uploadPromises = imageFiles.map(async (image)=>{
-        //     const b64 = Buffer.from(image.buffer).toString("base64");
-        //     let dataURI = "data:" + image.mimetype + ";base64," + b64;
-        //     const res = await cloudinary.v2.uploader.upload(dataURI);
-        //     return res.url;
-        // });
-
-
-
-        // const imageUrls = await Promise.all(uploadPromises);
         newDoctor.imageUrls = imageUrls;
 
         doctor = new Doctor(newDoctor);

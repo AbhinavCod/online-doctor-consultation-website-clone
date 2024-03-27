@@ -3,6 +3,7 @@ import { useMutation } from 'react-query';
 import { Link, useNavigate } from 'react-router-dom';
 import * as apiClient from "../api-clients";
 import { useAppContext } from '../context/AppContext';
+import toast from 'react-hot-toast';
 
 export type SignUpData = {
     fullName : string;
@@ -24,10 +25,12 @@ const RegisterationForm = ({doctor}:Props) => {
 
     const mutation1 = useMutation(apiClient.signup,{
         onSuccess:()=>{
+            toast.success("Registered Successfully");
             console.log("Registered Successfully Patient");
             navigate("/");
         },
         onError:()=>{
+            toast.error("Registration Failed");
             console.log("Registration Failed");
         }
     })

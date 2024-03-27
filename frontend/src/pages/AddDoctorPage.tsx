@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useMutation } from "react-query";
 import * as apiClient from "../api-clients";
+import toast from "react-hot-toast";
 
 export type AddDoctorData = {
     fullName:string,
@@ -24,10 +25,12 @@ const AddDoctorPage = () => {
     const [isLoading,setIsLoading] =  useState(false);
     const mutation = useMutation(apiClient.addDoctor,{
         onSuccess:()=>{
+            toast.success("Doctor registered");
             setIsLoading(false);
             console.log("Doctor registered");
         },
         onError:()=>{
+            toast.error("Doctor registeration failed");
             setIsLoading(false);
             console.log("Doctor registeration failed");
         }

@@ -9,6 +9,7 @@ import { StripeCardElement } from "@stripe/stripe-js";
 import { useMutation } from "react-query";
 import * as apiClient from "../api-clients";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 export type ConfirmPaymentData = {
   price: string;
@@ -26,10 +27,12 @@ const ConfirmPaymentForm = () => {
 
   const mutation = useMutation(apiClient.confirmPayment, {
     onSuccess: () => {
+      toast.success("Payment Confirmed");
       console.log("Payment Confirmed");
       navigate("/appointmentsPage");
     },
     onError: () => {
+      toast.error("Payment Failed");
       console.log("Payment Failed");
     },
   });

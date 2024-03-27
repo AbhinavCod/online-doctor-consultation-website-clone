@@ -3,6 +3,7 @@ import { useMutation } from "react-query";
 import * as apiClient from "../api-clients";
 import { useNavigate } from "react-router-dom";
 import { useAppContext } from "../context/AppContext";
+import toast from "react-hot-toast";
 
 export type OfflineBookingFormData = {
   fullName:string,
@@ -19,12 +20,14 @@ const OfflineBookingForm = () => {
   const navigate = useNavigate();
   const mutation1 = useMutation(apiClient.offlineBooking,{
     onSuccess: async (data)=>{
+      toast.success("Booking Done , pls pay the amount to confirm");
       console.log("Booking Done , pls pay the amount to confirm");
       const d = await data;
       console.log(d);
       
     },
     onError:()=>{
+      toast.error("Booking Failed, try later")
       console.log("Booking Failed, try later");
     },
   });
@@ -148,3 +151,4 @@ const OfflineBookingForm = () => {
 }
 
 export default OfflineBookingForm;
+
