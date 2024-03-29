@@ -255,7 +255,7 @@ const AddDoctorPage = () => {
         </div>
             <div className="flex flex-col gap-2 items-start px-4">
                     <label className="text-xl font-semibold tracking-tight">City :</label>
-                    <input type="text" placeholder="City Name..."  className="w-full outline-none py-1 px-2 text-xl border-gray-500 border-1 rounded-sm" {...register("city",{
+                    <input type="text" placeholder="City Name..."  className="w-fit outline-none py-1 px-2 text-xl border-gray-500 border-1 rounded-sm" {...register("city",{
                         required:"City Name is required"
                     })}></input>{errors.city && (
                         <span className="text-red-500">{errors.city.message}</span>

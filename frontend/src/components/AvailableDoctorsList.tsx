@@ -33,7 +33,7 @@ const AvailableDoctorsList = ({fullName,clinicAddress,degree,phoneNumber,type,em
                 </div>
 
 
-                <div className="flex flex-row gap-4 mt-4 justify-between">
+                <div className="flex flex-row gap-4 my-4 justify-between">
                     <Link to={"/bookAppointment"} className="bg-blue-600 text-white text-xl px-2 py-1 rounded-md hover:shadow-xl hover:bg-blue-700 hover:z-10">Book Appointment</Link>
                     <Link to={"/videoCall"} className="bg-blue-600 text-white text-xl px-2 py-1 rounded-md hover:shadow-xl hover:bg-blue-700 hover:z-10">Call Now...</Link>
                 </div>
