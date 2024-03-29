@@ -15,8 +15,7 @@ type AppContext = {
     setAmount:(num:Number)=>void;
     email:string;
     setEmailId:(id:string)=> void;
-    isDoctor:boolean;
-    setDoctorStatus : ()=> void;
+   
 };
 
 
@@ -28,12 +27,7 @@ export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
     const [clientSecret,setClientSecret] = useState("");
     const [price,setPrice] = useState("");
     const [email,setEmail] = useState("");
-    const [isDoctor,setIsDoctor] = useState(false);
-
-    const setDoctorStatus = ()=>{
-        setIsDoctor(!isDoctor);
-    }
-
+    
     const setEmailId = (id:string)=>{
         setEmail(id)
     }
@@ -62,8 +56,7 @@ export const AppContextProvider = ({children}:{children:React.ReactNode})=>{
             setAmount,
             email,
             setEmailId,
-            setDoctorStatus,
-            isDoctor
+            
         }}>
             {children}
         </AppContext.Provider>

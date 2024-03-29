@@ -55,24 +55,28 @@ const OfflineBookingForm = () => {
     })
 
   return (
-    <form className="flex flex-col gap-6 mt-16" onSubmit={onSubmit}>
+    <form className="flex flex-col gap-6 border-2 rounded-md shadow-xl z-10 border-gray-400 p-4 m-4" onSubmit={onSubmit}>
       
+      <div className="flex items-start">
+        <label className="text-3xl text-gray-700 font-semibold">Pateint's Appointment Form</label>
+        </div>
 
       <div className="flex gap-3">
-
-      <div className="flex flex-col">
-          <label className="text-xl  tracking-tight"><input type="text" className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="Full Name" {...register("fullName",{
+      <div className="flex flex-col items-start gap-1">
+          <label className="text-md font-semibold tracking-tight">Full Name</label>
+          <input type="text" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="Full Name" {...register("fullName",{
             required:"Full Name is required"
-          })}></input></label>
+          })}></input>
 
-{errors.fullName && (
+          {errors.fullName && (
             <span className="text-red-500">{errors.fullName.message}</span>
           )}
 
       </div>
 
-    <div className="flex flex-col">
-          <label className="text-xl tracking-tight"><input type="phonenumber" className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="Phone Number" {...register("phoneNumber",{
+    <div className="flex flex-col items-start gap-1">
+          <label className="text-md font-semibold tracking-tight">Contact No.</label>
+          <input type="phonenumber" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="Phone Number" {...register("phoneNumber",{
             required:"Phone Number is required",
             minLength:{
               value:10,
@@ -82,7 +86,7 @@ const OfflineBookingForm = () => {
               value:10,
               message:"Invalid Phone Number"
             }
-          })}></input></label>{errors.phoneNumber && (
+          })}></input>{errors.phoneNumber && (
             <span className="text-red-500">{errors.phoneNumber.message}</span>
           )}
 
@@ -90,33 +94,36 @@ const OfflineBookingForm = () => {
       </div>
 
       <div className="flex gap-3">
-        <div className="flex flex-col">
-          <label className="text-xl tracking-tight"><input type="text" className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="Disease" {...register("disease",{
+        <div className="flex flex-col items-start">
+          <label className="text-md font-semibold tracking-tight">Disease</label>
+          <input type="text" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="Disease" {...register("disease",{
               required:"Disease type required"
-            })}></input></label>{errors.disease && (
+            })}></input>{errors.disease && (
               <span className="text-red-500">{errors.disease.message}</span>
             )}
         </div>
 
-            <div className="flex flex-col">
+            <div className="flex flex-col items-start">
 
-            <label className="text-xl tracking-tight"><input type="email" className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="Email Id" {...register("email",{
+            <label className="text-md font-semibold tracking-tight">Email Id</label>
+            <input type="email" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="Email Id" {...register("email",{
                 required:"Email is required",
                 validate:{
                   matchPattern : (value)=>/^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/.test(value) ||
                   "Invalid Email Id"
               }
-              })}></input></label>{errors.email && (
+              })}></input>{errors.email && (
                 <span className="text-red-500">{errors.email.message}</span>
               )}
             </div>
       </div>
 
       <div className="flex">
-        <div className="flex flex-col">
-          <label className="text-xl tracking-tight "><input type="text" className="rounded-md py-1 px-3 outline-none" style={{width:"37rem"}} placeholder="Detail Disease Description" {...register("details",{
+        <div className="flex flex-col items-start">
+          <label className="text-md font-semibold tracking-tight ">Description</label>
+          <input type="text" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"37rem"}} placeholder="Detail Disease Description" {...register("details",{
                 required:"Please provide a bit detail about description"
-              })}></input></label>{errors.details && (
+              })}></input>{errors.details && (
                 <span className="text-red-500">{errors.details.message}</span>
               )}
 
@@ -124,26 +131,28 @@ const OfflineBookingForm = () => {
       </div>
 
       <div className="flex gap-3">
-        <div className="flex flex-col">
-            <label className="text-xl tracking-tight "><input type="date" className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="" {...register("date",{
+        <div className="flex flex-col items-start">
+            <label className="text-md font-semibold tracking-tight ">Date of Appointment</label>
+            <input type="date" className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="" {...register("date",{
                 required:"Date is required"
-              })}></input></label>{errors.date && (
+              })}></input>{errors.date && (
                 <span className="text-red-500">{errors.date.message}</span>
               )}
 
         </div>
 
-        <div className="flex flex-col">
-          <label className="text-xl ml- tracking-tight "><input className="rounded-md py-1 px-3 outline-none" style={{width:"18rem"}} placeholder="Symptom" {...register("symptom",{
+        <div className="flex flex-col items-start">
+          <label className="text-md font-semibold ml- tracking-tight ">Symptom</label>
+          <input className="rounded-md border-gray-400 border-1 py-1 px-1 outline-none" style={{width:"18rem"}} placeholder="Symptom" {...register("symptom",{
               required:"Atleast one symptom is required"
-            })}></input></label>{errors.symptom && (
+            })}></input>{errors.symptom && (
               <span className="text-red-500">{errors.symptom.message}</span>
             )}
         </div>
       </div>
 
       <div className="flex w-full items-cnter">
-          <button type="submit" className="mx-auto bg-white text-blue-600 text-xl font-bold px-3 rounded-md py-2 hover:rounded-3xl hover:text-blue-700">Pay & Book </button>
+          <button type="submit" className=" bg-blue-600 text-white text-xl font-bold px-3 rounded-md py-2 hover:rounded-3xl hover:text-blue-700">Pay & Book </button>
       </div>
 
     </form>

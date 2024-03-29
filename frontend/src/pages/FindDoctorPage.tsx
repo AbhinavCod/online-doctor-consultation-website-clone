@@ -56,6 +56,7 @@ const FindDoctorPage = () => {
         {list.length >0 && list.map((data)=> (
           <AvailableDoctorsList fullName={data.fullName} email={data.email} clinicAddress={data.clinicAddress} degree={data.degree} 
           phoneNumber={data.phoneNumber} type={data.type} experience={JSON.stringify(data.experience)} url={data.imageUrls[0]} city={data.city}/>
+          
             
         ))}
           

@@ -88,21 +88,22 @@
 
 
 import OfflineBookingForm from "../components/OfflineBookingForm";
-import image from "/images/Patient_clinic_1.png";
+import image from "/images/10130.jpg";
 
 const FindDoctor = () => {
   return (
     <>
-      <div className="bg-blue-800 w-full my-4 relative">
-
-        <img src={image} className="h-full w-full object-cover" alt="" />
-
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-center text-white">
+  <div className="flex flex-col gap-3 mt-4">
           <div className="text-5xl font-bold tracking-tight">Book Your Health Journey Now</div>
           <div className="text-3xl font-bold tracking-tight">Book any doctor offline at just ₹ 149/-</div>
-          <OfflineBookingForm />
-        </div>
-        
+  </div>
+      <div className="grid md:grid-cols-[2fr_2fr] p-8">
+          <div>
+            <OfflineBookingForm />
+          </div>
+          <div className="flex ">
+            <img className="bg-blue-800" src={image} alt="" />
+          </div>
       </div>
 
       <div className="flex flex-col mt-12">

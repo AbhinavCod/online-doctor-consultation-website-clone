@@ -165,7 +165,6 @@ const VideoCallPage = () => {
         <>
             <div className='flex flex-col'>
 
-                {/* Desktop view */}
                 <div className='hidden md:grid md:grid-cols-[2fr_2fr] mt-4 p-6' style={{ backgroundColor: "#f8e9e6" }}>
                     <div className='flex flex-col gap-2 items-start'>
                         <h1 className='text-4xl text-gray-800 tracking-tight font-semibold ml-8 pt-6'>Skip the travel!</h1>
@@ -200,7 +199,6 @@ const VideoCallPage = () => {
 
                 </div>
 
-                {/* Mobile view */}
                 <div className="md:hidden flex flex-col items-center mt-4 p-6" style={{ backgroundColor: "#f8e9e6" }}>
                     <h1 className='text-4xl text-gray-800 tracking-tight font-semibold'>Skip the travel!</h1>
                     <h1 className='text-4xl text-gray-800 tracking-tight font-semibold'>Take Online Doctor Consultation</h1>
@@ -223,7 +221,7 @@ const VideoCallPage = () => {
 
             </div>
 
-            {/* Rest of the content remains unchanged */}
+            
 
             <div className='flex flex-col items-start my-6 mt-12 gap-3'>
         <div className='flex text-4xl font-semibold text-gray-800 ml-10'>

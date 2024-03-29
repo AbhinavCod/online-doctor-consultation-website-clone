@@ -55,3 +55,131 @@
   background: #888; /* Color of the thumb */
   border-radius: 5px; /* Roundness of the thumb */
 }
+
+
+/* .custom-swiper-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.custom-prev-button,
+.custom-next-button {
+  cursor: pointer;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+.custom-prev-button:hover,
+.custom-next-button:hover {
+  background-color: #aaa;
+} */
+
+
+/* Header */
+.header {
+  top: 0;
+  position: relative;
+  z-index: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  height: 6rem; /* Adjust as needed */
+  border-bottom: 1px solid #ddd; /* Example border style */
+  background-color: #ffffff; /* Example background color */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Logo */
+.logo {
+  margin-left: 1rem; /* Adjust as needed */
+  font-size: 1.5rem; /* Example font size */
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+  display: none; /* Hidden by default on larger screens */
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  gap: 1rem;
+  margin-right: 2rem; /* Adjust as needed */
+}
+
+.nav-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li {
+  margin-right: 1rem;
+}
+
+/* Responsive styles for mobile view */
+@media (max-width: 768px) {
+  /* Hamburger Menu */
+  .hamburger-menu {
+    display: block; /* Show on smaller screens */
+    margin-right: 1rem; /* Adjust as needed */
+  }
+
+  .desktop-only{
+    display:none
+
+  }
+
+  /* Hide navigation links by default on smaller screens */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%; /* Position below header */
+    left: 0;
+    background-color: #ffffff; /* Example background color */
+    width: 100%;
+    padding: 1rem; /* Adjust as needed */
+    border-top: 1px solid #ddd; /* Example border style */
+  }
+
+  /* Show navigation links when menu is open */
+  .nav-links.open {
+    display: flex;
+  }
+
+  /* Style for individual links in mobile view */
+  .nav-links a {
+    font-size: 1rem; /* Example font size */
+    color: #333; /* Example color */
+    text-decoration: none;
+  }
+
+  .nav-links a:hover {
+    color: #555; /* Example color on hover */
+  }
+
+  /* Style for login/signup button in mobile view */
+  .login-button {
+    margin-top: 1rem; /* Adjust as needed */
+    padding: 0.5rem 1rem; /* Example padding */
+    border: 1px solid #333; /* Example border style */
+    border-radius: 5px; /* Example border radius */
+    background-color: #ffffff; /* Example background color */
+    color: #333; /* Example color */
+    text-decoration: none;
+    font-size: 1rem; /* Example font size */
+  }
+
+  .login-button:hover {
+    background-color: #f0f0f0; /* Example background color on hover */
+  }
+}
+
+
