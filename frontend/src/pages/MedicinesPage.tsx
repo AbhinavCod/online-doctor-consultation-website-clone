@@ -1,3 +1,128 @@
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
+// import { Carousel, CarouselItem } from "react-bootstrap";
+// import { useState } from "react";
+// import list from "../data/data";
+// import { Swiper,SwiperSlide } from "swiper/react";
+// import 'swiper/swiper-bundle.css';
+// import { Navigation,Pagination } from 'swiper/modules';
+// import SwiperCore from 'swiper';
+// import MedicineCard from "../components/MedicineCard";
+
+// SwiperCore.use([Navigation, Pagination]);
+
+
+// const MedicinesPage = () => {
+//   const [medName, setMedName] = useState("");
+//   const [display, setDisplay] = useState(false);
+
+//   return (
+//     <div className="flex flex-col gap-2 my-3 relative">
+//       <div className="flex px-8 md:flex-row md:justify-between sm:flex-col">
+
+//         <div className="flex border-1 flex-col border-gray-300 w-[50%] align-items-center roundeed-sm z-10 shadow-md relative">
+
+//           <div className="flex flex-row w-full">
+//             <span className="py-1 w-[5%] my-auto"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>
+//             <span className="w-[80%] py-2"><input type="text" onChange={(e) => {
+//               if (e.target.value.length >= 3) {
+//                 setMedName(e.target.value);
+//                 setDisplay(true);
+//               }
+//               else {
+//                 setDisplay(false);
+//               }
+//             }} placeholder="Search for medicines, health products and more" className="outline-none py-1 w-full" /></span>
+//           </div>
+
+//           {medName.length >= 3 && display && (
+//             <div className='overflow-y-auto w-full bg-white border-gray-200 h-56 px-4 absolute top-full left-0 right-0 z-20'>
+//               {list.map((item,index) => (
+//                 <>
+//                   <div key={index} className="flex flex-row justify-between px-2 py-2 w-full z-10">
+//                     <span className=""><img className="h-16 w-16" src="https://www.practostatic.com/ecommerce-assets/static/media/placeholder_product.39dd65c8.png" alt="" /></span>
+
+//                     <div className="flex flex-col">
+//                       <span className="font-semibold">{item}</span>
+//                       <span className="text-gray-500 font-semibold">30 Tablets ( 30/strip )</span>
+//                       <span className="text-gray-500 font-semibold">₹ 15.64/tab</span>
+//                     </div>
+
+//                     <span className="border-1 border-blue-500 px-6 rounded-md my-4"><button onClick={() => setDisplay(false)} className="text-blue-500">ADD</button></span>
+//                   </div>
+//                   <hr></hr>
+//                 </>
+//               ))}
+//             </div>
+//           )}
+//         </div>
+
+
+//         <div>
+//           <button className="bg-[#14BEF0] py-2 px-3 text-white text-2xl rounded-md font-semibold hover:z-10 hover:shadow-xl"><span><FontAwesomeIcon className="mx-2" icon={faShoppingCart}></FontAwesomeIcon></span>View Cart</button>
+//         </div>
+
+//       </div>
+
+//       <div className="flex my-4">
+//         <Carousel>
+//           <CarouselItem>
+//             <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-3.8c8ab982.png"></img>
+//           </CarouselItem>
+//           <CarouselItem>
+//             <img className="bg-[#EEEBf8]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-4.2a2a16cc.png"></img>
+//           </CarouselItem>
+//           <CarouselItem>
+//             <img className="bg-[#F7E8E6]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-2.573c08f7.png"></img>
+//           </CarouselItem>
+//           <CarouselItem>
+//             <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-1.48172107.png"></img>
+//           </CarouselItem>
+//         </Carousel>
+
+//       </div>
+
+
+//       <div>
+//       <Swiper
+//         spaceBetween={20}
+//         slidesPerView={1}
+//         navigation 
+//         pagination={{ clickable: true }}
+//         breakpoints={{
+//           640: { slidesPerView: 2 },
+//           768: { slidesPerView: 3 },
+//           1024: { slidesPerView: 4 },
+//         }}
+//       >
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+//         <SwiperSlide>
+//           <MedicineCard />
+//         </SwiperSlide>
+      
+        
+//       </Swiper>
+//     </div>
+//     </div>
+//   )
+// }
+
+// export default MedicinesPage;
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import { Carousel, CarouselItem } from "react-bootstrap";
@@ -11,55 +136,48 @@ import MedicineCard from "../components/MedicineCard";
 
 SwiperCore.use([Navigation, Pagination]);
 
-
 const MedicinesPage = () => {
   const [medName, setMedName] = useState("");
   const [display, setDisplay] = useState(false);
 
   return (
     <div className="flex flex-col gap-2 my-3 relative">
-      <div className="flex px-8 md:flex-row md:justify-between sm:flex-col">
+      <div className="flex flex-col md:flex-row md:justify-between sm:flex-col px-4 md:px-8">
 
-        <div className="flex border-1 flex-col border-gray-300 w-[50%] align-items-center roundeed-sm z-10 shadow-md relative">
+        <div className="flex flex-col md:flex-row w-full md:w-[50%] items-center border border-gray-300 rounded-md shadow-md relative">
 
-          <div className="flex flex-row w-full">
-            <span className="py-1 w-[5%] my-auto"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>
-            <span className="w-[80%] py-2"><input type="text" onChange={(e) => {
-              if (e.target.value.length >= 3) {
-                setMedName(e.target.value);
-                setDisplay(true);
-              }
-              else {
-                setDisplay(false);
-              }
-            }} placeholder="Search for medicines, health products and more" className="outline-none py-1 w-full" /></span>
-          </div>
+          <span className="py-1 w-[5%] my-auto"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></span>
+          <input type="text" onChange={(e) => {
+            if (e.target.value.length >= 3) {
+              setMedName(e.target.value);
+              setDisplay(true);
+            }
+            else {
+              setDisplay(false);
+            }
+          }} placeholder="Search for medicines, health products and more" className="outline-none py-2 w-full md:w-[80%]" />
 
           {medName.length >= 3 && display && (
-            <div className='overflow-y-auto w-full bg-white border-gray-200 h-56 px-4 absolute top-full left-0 right-0 z-20'>
+            <div className='overflow-y-auto w-full bg-white border border-gray-200 h-56 px-4 absolute top-full left-0 right-0 z-20'>
               {list.map((item,index) => (
-                <>
-                  <div key={index} className="flex flex-row justify-between px-2 py-2 w-full z-10">
-                    <span className=""><img className="h-16 w-16" src="https://www.practostatic.com/ecommerce-assets/static/media/placeholder_product.39dd65c8.png" alt="" /></span>
+                <div key={index} className="flex flex-row justify-between px-2 py-2 w-full z-10">
+                  <img className="h-16 w-16" src="https://www.practostatic.com/ecommerce-assets/static/media/placeholder_product.39dd65c8.png" alt="" />
 
-                    <div className="flex flex-col">
-                      <span className="font-semibold">{item}</span>
-                      <span className="text-gray-500 font-semibold">30 Tablets ( 30/strip )</span>
-                      <span className="text-gray-500 font-semibold">₹ 15.64/tab</span>
-                    </div>
-
-                    <span className="border-1 border-blue-500 px-6 rounded-md my-4"><button onClick={() => setDisplay(false)} className="text-blue-500">ADD</button></span>
+                  <div className="flex flex-col">
+                    <span className="font-semibold">{item}</span>
+                    <span className="text-gray-500 font-semibold">30 Tablets ( 30/strip )</span>
+                    <span className="text-gray-500 font-semibold">₹ 15.64/tab</span>
                   </div>
-                  <hr></hr>
-                </>
+
+                  <button onClick={() => setDisplay(false)} className="border border-blue-500 px-6 rounded-md my-4 text-blue-500">ADD</button>
+                </div>
               ))}
             </div>
           )}
         </div>
 
-
-        <div>
-          <button className="bg-[#14BEF0] py-2 px-3 text-white text-2xl rounded-md font-semibold hover:z-10 hover:shadow-xl"><span><FontAwesomeIcon className="mx-2" icon={faShoppingCart}></FontAwesomeIcon></span>View Cart</button>
+        <div className="mt-4 md:mt-0">
+          <button className="bg-[#14BEF0] py-2 px-3 text-white text-2xl rounded-md font-semibold hover:z-10 hover:shadow-xl"><FontAwesomeIcon className="mx-2" icon={faShoppingCart}></FontAwesomeIcon>View Cart</button>
         </div>
 
       </div>
@@ -67,56 +185,52 @@ const MedicinesPage = () => {
       <div className="flex my-4">
         <Carousel>
           <CarouselItem>
-            <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-3.8c8ab982.png"></img>
+            <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-3.8c8ab982.png" alt="" />
           </CarouselItem>
           <CarouselItem>
-            <img className="bg-[#EEEBf8]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-4.2a2a16cc.png"></img>
+            <img className="bg-[#EEEBf8]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-4.2a2a16cc.png" alt="" />
           </CarouselItem>
           <CarouselItem>
-            <img className="bg-[#F7E8E6]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-2.573c08f7.png"></img>
+            <img className="bg-[#F7E8E6]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-2.573c08f7.png" alt="" />
           </CarouselItem>
           <CarouselItem>
-            <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-1.48172107.png"></img>
+            <img className="bg-[#E4F2EB]" src="https://www.practostatic.com/ecommerce-assets/static/media/home/desktop/full-width-1.48172107.png" alt="" />
           </CarouselItem>
         </Carousel>
-
       </div>
 
-
       <div>
-      <Swiper
-        spaceBetween={20}
-        slidesPerView={1}
-        navigation 
-        pagination={{ clickable: true }}
-        breakpoints={{
-          640: { slidesPerView: 2 },
-          768: { slidesPerView: 3 },
-          1024: { slidesPerView: 4 },
-        }}
-      >
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-        <SwiperSlide>
-          <MedicineCard />
-        </SwiperSlide>
-      
-        
-      </Swiper>
-    </div>
+        <Swiper
+          spaceBetween={20}
+          slidesPerView={1}
+          navigation 
+          pagination={{ clickable: true }}
+          breakpoints={{
+            640: { slidesPerView: 2 },
+            768: { slidesPerView: 3 },
+            1024: { slidesPerView: 4 },
+          }}
+        >
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+          <SwiperSlide>
+            <MedicineCard />
+          </SwiperSlide>
+        </Swiper>
+      </div>
     </div>
   )
 }
