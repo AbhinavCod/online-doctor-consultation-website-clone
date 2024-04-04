@@ -3,7 +3,7 @@ import SpecialityCard from "./SpecialityCard"
 
 const Specialities = () => {
   return (
-   <div className="flex gap-6">
+   <div className="flex flex-col md:flex-row lg:flex-row gap-6">
     <SpecialityCard url="https://www.practostatic.com/consult/consult-home/symptoms_icon/irregular-painful+period.png"
      symptom="Periods doubt or Pregnancy" />
 

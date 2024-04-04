@@ -112,7 +112,7 @@ const Home = () => {
       </h1>
     </div>
 
-    <Appointments />
+    {/* <Appointments /> */}
 
     <hr className="py-3" />
   </div>

@@ -70,13 +70,10 @@ const Header = () => {
           </Link>
         </div>
 
-        <button className="hamburger-menu sm:hidden" onClick={toggleMenu}>
-          <span className="bar"><FontAwesomeIcon icon={faBars} /></span>
-          
-        </button>
+        
 
         <nav className={`nav-links ${isOpen ? 'open' : ''}`}>
-          <div className="sm:hidden flex flex-col items-center mt-4">
+          <div className="sm:hidden flex flex-col items-center w-fit mx-auto mt-4">
             <Link to={"/bookAppointment"} className="text-xl hover:text-gray-600 mb-2">
               Book Appointments
             </Link>
@@ -150,6 +147,12 @@ const Header = () => {
             </button>
           )}
         </div>
+
+
+        <button className="hamburger-menu sm:hidden" onClick={toggleMenu}>
+          <span className="bar"><FontAwesomeIcon icon={faBars} /></span>
+          
+        </button>
 
       </div>
       <hr className="z-10"></hr>

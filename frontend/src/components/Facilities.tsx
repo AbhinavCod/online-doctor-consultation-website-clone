@@ -2,7 +2,7 @@ import FacilityCard from "./FacilityCard";
 
 const Facilities = () => {
   return (
-    <div className="flex gap-4 py-10 justify-between items-center">
+    <div className="flex flex-col md:flex-row lg:flex-row gap-4 py-10 justify-between items-center">
         <FacilityCard url="https://www.practostatic.com/consumer-home/desktop/images/1597423628/dweb_instant_video_consulation.png"
             facility="Instant Video Consultation"
             feature="Connect within 60 sec" 

@@ -15,24 +15,24 @@ const Feedbacks = () => {
     <Carousel.Item>
     <div className='flex w-fit py-10'>
 
-    <h3 className='text-gray-600 text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
-    appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</h3>
+    <p className='text-gray-600 sm:text-wrap text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
+    appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</p>
     </div>
     <p className='text-xl'><span className='mx-2'><FontAwesomeIcon icon={faUser} /></span>Amit Sharma</p>
     </Carousel.Item>
     <Carousel.Item>
         <div className='flex w-fit py-10'>
 
-            <h3 className='text-gray-600 text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
-            appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</h3>
+            <p className='text-gray-600 sm:text-wrap text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
+            appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</p>
         </div>
         <p className='text-xl'><span className='mx-2'><FontAwesomeIcon icon={faUser} /></span>Amit Sharma</p>
     </Carousel.Item>
     <Carousel.Item>
     <div className='flex w-fit py-10'>
 
-    <h3 className='text-gray-600 text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
-    appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</h3>
+    <p className='text-gray-600 sm:text-wrap text-3xl font-semibold items-center  mx-auto'>Very good app. Well thought out about booking/rescheduling/canceling an 
+    appointment. Also, Doctor's feedback mechanism is good and describes all the basics in a good way</p>
     </div>
     <p className='text-xl'><span className='mx-2'><FontAwesomeIcon icon={faUser} /></span>Amit Sharma</p>
     </Carousel.Item>
