@@ -63,7 +63,7 @@ import { Link } from "react-router-dom";
 import Facilities from "../components/Facilities";
 import SearchLocation from "../components/SearchLocation";
 import Specialities from "../components/Specialities";
-import Appointments from "../components/Appointments";
+// import Appointments from "../components/Appointments";
 import Feedbacks from "../components/Feedbacks";
 
 const Home = () => {

@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLocationDot, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {  faSearch } from '@fortawesome/free-solid-svg-icons';
 import { useState } from "react";
 
 const SearchLocation = () => {
@@ -21,7 +21,7 @@ const SearchLocation = () => {
                 <div className="mx-1 flex flex-col md:flex-row lg:flex-row items-center px-6">
                     <div className="flex w-full">
                         <FontAwesomeIcon className="my-auto mr-2" icon={faSearch} />
-                        <input type="text" className="my-2 text-xl w-full border-none outline-none" placeholder="Search Doctors, Specialities, Symptoms etc." autoComplete="off" onChange={(e) => setLocation(e.target.value)} />
+                        <input type="text" className="my-2 text-xl w-full border-none outline-none" placeholder="Search Doctors, Specialities, Symptoms etc." autoComplete="off" value={location} onChange={(e) => setLocation(e.target.value)} />
                     </div>
                     <button className="bg-blue-300 px-10  py-1 md:px-2 rounded-md hover:bg-blue-400 hover:shadow-lg"><FontAwesomeIcon className="my-auto" icon={faSearch} /></button>
                 </div>
